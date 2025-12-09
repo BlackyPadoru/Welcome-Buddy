@@ -99,15 +99,35 @@
 <div id="login-modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="hideLogin()">&times;</span>
-    <h2>Zaloguj się</h2>
-    <form onsubmit="return handleLogin(event)">
+    <h2 id="modal-title">Zaloguj się</h2>
+    
+    <!-- LOGIN FORM -->
+    <form id="login-form" onsubmit="return handleLogin(event)">
       <input type="text" id="username" placeholder="Konto" required>
       <input type="password" id="password" placeholder="Hasło" required>
       <button type="submit" class="btn-primary">Zaloguj</button>
       <p class="hint">Podpowiedź: Konto: Ania, Hasło: 123</p>
+      <p class="switch-form">Nie masz konta? <a href="#" onclick="showRegister(event)">Zarejestruj się</a></p>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form id="register-form" style="display:none;" onsubmit="return handleRegister(event)">
+      <input type="text" id="reg-name" placeholder="Imię" required>
+      <input type="text" id="reg-username" placeholder="Nazwa użytkownika" required>
+      <input type="email" id="reg-email" placeholder="Email uczelniany" required>
+      <input type="text" id="reg-kierunek" placeholder="Kierunek studiów" required>
+      <input type="text" id="reg-zainteresowania" placeholder="Zainteresowania (np. gry, książki)" required>
+      <label for="reg-smielosc" style="color: var(--muted); font-size: 0.85rem; margin-top: 8px;">Poziom śmiałości (1-5):</label>
+      <input type="range" id="reg-smielosc" min="1" max="5" value="3" oninput="updateSmielosc(this.value)">
+      <p id="smielosc-display" style="color: var(--accent); font-size: 0.85rem; margin: -8px 0 8px;">⭐⭐⭐</p>
+      <input type="password" id="reg-password" placeholder="Hasło" required>
+      <input type="password" id="reg-password-confirm" placeholder="Powtórz hasło" required>
+      <button type="submit" class="btn-primary">Utwórz konto</button>
+      <p class="switch-form">Masz już konto? <a href="#" onclick="showLogin(event)">Zaloguj się</a></p>
     </form>
   </div>
 </div>
+
 
 <!-- APP -->
 <div id="app" style="display:none;">
