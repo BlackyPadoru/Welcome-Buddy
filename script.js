@@ -1,6 +1,21 @@
 // Login system
-function showLogin() {
+let registeredUsers = [
+  { username: 'Ania', password: '123', name: 'Ania' }
+];
+
+function showLogin(event) {
+  if (event) event.preventDefault();
   document.getElementById('login-modal').style.display = 'flex';
+  document.getElementById('login-form').style.display = 'flex';
+  document.getElementById('register-form').style.display = 'none';
+  document.getElementById('modal-title').textContent = 'Zaloguj się';
+}
+
+function showRegister(event) {
+  if (event) event.preventDefault();
+  document.getElementById('login-form').style.display = 'none';
+  document.getElementById('register-form').style.display = 'flex';
+  document.getElementById('modal-title').textContent = 'Utwórz konto';
 }
 
 function hideLogin() {
@@ -12,22 +27,85 @@ function handleLogin(event) {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  if (username === 'Ania' && password === '123') {
+  const user = registeredUsers.find(u => u.username === username && u.password === password);
+
+  if (user) {
+    localStorage.setItem('currentUser', user.name);
     document.getElementById('landing-page').style.display = 'none';
     document.getElementById('login-modal').style.display = 'none';
     document.getElementById('app').style.display = 'block';
+    
+    // Zaktualizuj powitanie
+    const greeting = document.querySelector('#zapoznania h2');
+    if (greeting) {
+      greeting.textContent = `Cześć, ${user.name}! 👋`;
+    }
+    
     return false;
   } else {
-    alert('Nieprawidłowe dane logowania!\nPoprawne dane:\nKonto: Ania\nHasło: 123');
+    alert('Nieprawidłowe dane logowania!');
     return false;
   }
 }
 
+function handleRegister(event) {
+  event.preventDefault();
+  
+  const name = document.getElementById('reg-name').value;
+  const username = document.getElementById('reg-username').value;
+  const email = document.getElementById('reg-email').value;
+  const kierunek = document.getElementById('reg-kierunek').value;
+  const zainteresowania = document.getElementById('reg-zainteresowania').value;
+  const smielosc = document.getElementById('reg-smielosc').value;
+  const password = document.getElementById('reg-password').value;
+  const passwordConfirm = document.getElementById('reg-password-confirm').value;
+
+  // Walidacja
+  if (password !== passwordConfirm) {
+    alert('Hasła nie są identyczne!');
+    return false;
+  }
+
+  if (registeredUsers.find(u => u.username === username)) {
+    alert('Użytkownik o tej nazwie już istnieje!');
+    return false;
+  }
+
+  // Dodaj użytkownika
+  registeredUsers.push({
+    username: username,
+    password: password,
+    name: name,
+    email: email,
+    kierunek: kierunek,
+    zainteresowania: zainteresowania,
+    smielosc: smielosc
+  });
+
+  alert(`Witaj ${name}! 🎉\nKonto zostało utworzone. Możesz się teraz zalogować.`);
+  
+  // Przełącz na formularz logowania
+  showLogin();
+  
+  // Wypełnij dane logowania
+  document.getElementById('username').value = username;
+  document.getElementById('password').value = password;
+
+  return false;
+}
+
+function updateSmielosc(value) {
+  const stars = '⭐'.repeat(value);
+  document.getElementById('smielosc-display').textContent = stars;
+}
+
 function logout() {
+  localStorage.removeItem('currentUser');
   document.getElementById('app').style.display = 'none';
   document.getElementById('landing-page').style.display = 'block';
   showScreen('zapoznania');
 }
+
 
 // Screen navigation
 function showScreen(screenName) {
