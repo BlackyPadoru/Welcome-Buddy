@@ -2,208 +2,350 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Buddy / Welcome – delikatna integracja na uczelni</title>
+  <title>Buddy / Welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="style.css" rel="stylesheet">
+
 </head>
 <body>
-<header class="hero">
-  <nav class="nav">
-    <div class="logo">Buddy / Welcome</div>
-    <ul class="nav-links">
-      <li><a href="#about">O aplikacji</a></li>
-      <li><a href="#features">Funkcje</a></li>
-      <li><a href="#screens">Ekrany</a></li>
-      <li><a href="#why">Dlaczego my?</a></li>
-    </ul>
-  </nav>
 
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1>Delikatna integracja, która daje bezpieczeństwo, wsparcie i przynależność</h1>
-      <p>
-        Buddy / Welcome pomaga nowym i mniej zintegrowanym studentom wejść w życie uczelni
-        dzięki mentoringowi, małym grupom i spokojnym wydarzeniom.
-      </p>
-      <a href="#cta" class="btn-primary">Zapisz się na listę zainteresowanych</a>
-    </div>
-    <div class="hero-card">
-      <h2>Znajdź swojego buddy’ego</h2>
-      <p>Wypełnij krótki profil: kierunek, zainteresowania, poziom śmiałości, a my dobierzemy mentora i małą grupę powitalną.</p>
-      <form>
-        <input type="text" placeholder="Imię" required>
-        <input type="text" placeholder="Kierunek studiów" required>
-        <input type="text" placeholder="Zainteresowania (np. gry, książki, spacery)" required>
-        <button type="submit" class="btn-secondary">Wypróbuj wkrótce</button>
-        <small>Demo formularz – wersja pokazowa.</small>
-      </form>
-    </div>
-  </div>
-</header>
+<!-- LANDING PAGE -->
+<div id="landing-page">
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">Buddy / Welcome</div>
+      <ul class="nav-links">
+        <li><a href="#about">O aplikacji</a></li>
+        <li><a href="#features">Funkcje</a></li>
+        <li><a href="#screens">Ekrany</a></li>
+        <li><a href="#why">Dlaczego my?</a></li>
+      </ul>
+      <button class="btn-login" onclick="showLogin()">Zaloguj</button>
+    </nav>
 
-<main>
-  <section id="about" class="section">
-    <div class="section-content">
-      <h2>O aplikacji</h2>
-      <p>
-        Buddy / Welcome to aplikacja, która pomaga studentom takim jak Ania – nowym, nieśmiałym
-        i zagubionym – znaleźć „bezpieczną grupę”, mentora oraz spokojne wydarzenia na uczelni.
-      </p>
-      <p>
-        Łączymy integrację, mentoring oraz wsparcie w nauce, aby zmniejszyć poczucie samotności,
-        ułatwić zadawanie pytań i ogarnianie materiałów z zajęć.
-      </p>
-    </div>
-  </section>
-
-  <section id="persona" class="section section-alt">
-    <div class="section-content two-cols">
-      <div>
-        <h2>Dla kogo?</h2>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Delikatna integracja, która daje bezpieczeństwo, wsparcie i przynależność</h1>
         <p>
-          Główną użytkowniczką jest Ania: studentka 1. roku, nowa w mieście, raczej nieśmiała,
-          unikająca głośnych imprez i szukająca kilku bliskich osób zamiast dużej paczki.
+          Buddy / Welcome pomaga nowym i mniej zintegrowanym studentom wejść w życie uczelni
+          dzięki mentoringowi, małym grupom i spokojnym wydarzeniom.
+        </p>
+        <button class="btn-primary" onclick="showLogin()">Wypróbuj teraz</button>
+      </div>
+      <div class="hero-card">
+        <h2>Znajdź swojego buddy'ego</h2>
+        <p>Wypełnij krótki profil: kierunek, zainteresowania, poziom śmiałości, a my dobierzemy mentora i małą grupę powitalną.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <div class="section-content">
+        <h2>O aplikacji</h2>
+        <p>
+          Buddy / Welcome to aplikacja, która pomaga studentom takim jak Ania – nowym, nieśmiałym
+          i zagubionym – znaleźć „bezpieczną grupę", mentora oraz spokojne wydarzenia na uczelni.
         </p>
       </div>
-      <div class="card-list">
-        <div class="card">
-          <h3>Bóle</h3>
-          <ul>
-            <li>Poczucie samotności i bycia „z boku”.</li>
-            <li>Lęk przed odrzuceniem i trudność w rozpoczęciu rozmowy.</li>
-            <li>Chaos informacyjny: plan, materiały, zmiany sal.</li>
-          </ul>
+    </section>
+
+    <section id="features" class="section section-alt">
+      <div class="section-content">
+        <h2>Co oferuje Buddy / Welcome?</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Integracja i relacje</h3>
+            <ul>
+              <li>Profil: kierunek, zainteresowania, poziom śmiałości.</li>
+              <li>Tablica „Poznajmy się" z prostymi profilami.</li>
+              <li>Małe grupy powitalne (5–8 osób) online i offline.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Mentoring 1:1</h3>
+            <ul>
+              <li>Dopasowanie mentor–mentee po kierunku i zainteresowaniach.</li>
+              <li>Czat 1:1 i umawianie spotkań w kalendarzu.</li>
+              <li>Generator „icebreakerów" dla mentorów i prowadzących.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Spokojne wydarzenia</h3>
+            <ul>
+              <li>Inteligentne propozycje wydarzeń dopasowane do temperamentu.</li>
+              <li>Kalendarz z filtrami: ciche, warsztaty, gry, spacery, wolontariat.</li>
+            </ul>
+          </div>
         </div>
-        <div class="card">
-          <h3>Potrzeby</h3>
-          <ul>
-            <li>Delikatne wejście do społeczności i małe grupy.</li>
-            <li>Mentor lub buddy, który pomaga ogarnąć uczelnię.</li>
-            <li>Spokojne, „ciche” wydarzenia zamiast głośnych imprez.</li>
-          </ul>
+      </div>
+    </section>
+
+    <section id="why" class="section">
+      <div class="section-content">
+        <h2>Dlaczego Buddy / Welcome?</h2>
+        <ul class="checklist">
+          <li>Personalizacja pod temperament, w tym introwertyków.</li>
+          <li>Mikro-grupy zamiast dużych, przytłaczających integracji.</li>
+          <li>Połączenie integracji, mentoringu i wsparcia akademickiego.</li>
+          <li>Spokojne, „ciche" wydarzenia, spacery i spotkania online.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- LOGIN MODAL -->
+<div id="login-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="hideLogin()">&times;</span>
+    <h2>Zaloguj się</h2>
+    <form onsubmit="return handleLogin(event)">
+      <input type="text" id="username" placeholder="Konto" required>
+      <input type="password" id="password" placeholder="Hasło" required>
+      <button type="submit" class="btn-primary">Zaloguj</button>
+      <p class="hint">Podpowiedź: Konto: Ania, Hasło: 123</p>
+    </form>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none;">
+  <nav class="app-nav">
+    <div class="logo">Buddy / Welcome</div>
+    <div class="app-tabs">
+      <button class="tab active" onclick="showScreen('zapoznania')">Zapoznania</button>
+      <button class="tab" onclick="showScreen('mentoring')">Mentoring</button>
+      <button class="tab" onclick="showScreen('wydarzenia')">Wydarzenia</button>
+      <button class="tab" onclick="showScreen('czat')">Czat</button>
+      <button class="tab" onclick="showScreen('profil')">Profil</button>
+    </div>
+    <button class="btn-logout" onclick="logout()">Wyloguj</button>
+  </nav>
+
+  <!-- ZAPOZNANIA -->
+  <div id="zapoznania" class="screen active">
+    <div class="screen-content">
+      <h2>Cześć, Ania! 👋</h2>
+      <p class="subtitle">Poznaj nowych ludzi i dołącz do spokojnych wydarzeń.</p>
+
+      <h3>Wydarzenia polecane dla Ciebie</h3>
+      <div class="event-cards">
+        <div class="event-card">
+          <span class="event-tag ciche">Ciche</span>
+          <h4>Kawiarnia i gry planszowe</h4>
+          <p>Sobota, 14:00 • Kafejka "Cicho Sza"</p>
+          <button class="btn-secondary">Dołącz</button>
+        </div>
+        <div class="event-card">
+          <span class="event-tag spacer">Spacer</span>
+          <h4>Spacer po parku miejskim</h4>
+          <p>Niedziela, 10:00 • Park Centralny</p>
+          <button class="btn-secondary">Dołącz</button>
+        </div>
+        <div class="event-card">
+          <span class="event-tag warsztat">Warsztat</span>
+          <h4>Warsztat rysunku dla początkujących</h4>
+          <p>Środa, 18:00 • Sala 203</p>
+          <button class="btn-secondary">Dołącz</button>
+        </div>
+      </div>
+
+      <h3>Małe grupy powitalne</h3>
+      <div class="group-cards">
+        <div class="group-card">
+          <h4>Grupa "Informatycy 1. rok"</h4>
+          <p>6 osób • Online co piątek o 19:00</p>
+          <button class="btn-secondary">Dołącz</button>
+        </div>
+        <div class="group-card">
+          <h4>Grupa "Gry i anime"</h4>
+          <p>5 osób • Spotkania w kampusie</p>
+          <button class="btn-secondary">Dołącz</button>
+        </div>
+      </div>
+
+      <h3>Tablica „Poznajmy się"</h3>
+      <div class="profile-cards">
+        <div class="profile-card">
+          <div class="avatar">M</div>
+          <div>
+            <h4>Marek</h4>
+            <p class="tags">🎮 Gry • 📚 Książki • 🎨 Rysowanie</p>
+            <button class="btn-small">Napisz wiadomość</button>
+          </div>
+        </div>
+        <div class="profile-card">
+          <div class="avatar">K</div>
+          <div>
+            <h4>Kasia</h4>
+            <p class="tags">☕ Kawa • 🚶 Spacery • 🎬 Filmy</p>
+            <button class="btn-small">Napisz wiadomość</button>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="features" class="section">
-    <div class="section-content">
-      <h2>Co oferuje Buddy / Welcome?</h2>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Integracja i relacje</h3>
-          <ul>
-            <li>Profil: kierunek, zainteresowania, poziom śmiałości.</li>
-            <li>Tablica „Poznajmy się” z prostymi profilami.</li>
-            <li>Małe grupy powitalne (5–8 osób) online i offline.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Mentoring 1:1</h3>
-          <ul>
-            <li>Dopasowanie mentor–mentee po kierunku i zainteresowaniach.</li>
-            <li>Czat 1:1 i umawianie spotkań w kalendarzu.</li>
-            <li>Generator „icebreakerów” dla mentorów i prowadzących.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Spokojne wydarzenia</h3>
-          <ul>
-            <li>Inteligentne propozycje wydarzeń dopasowane do temperamentu.</li>
-            <li>Kalendarz z filtrami: ciche, warsztaty, gry, spacery, wolontariat.</li>
-            <li>Powiadomienia o spotkaniach i zmianach planu.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Wsparcie w nauce</h3>
-          <ul>
-            <li>Kanały czatowe dla kierunku i rocznika.</li>
-            <li>Sekcja „Podsumowania zajęć”: notatki, prezentacje, nagrania.</li>
-            <li>Możliwość zadawania pytań bez stresu, w małych grupach.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Powiadomienia i organizacja</h3>
-          <ul>
-            <li>Powiadomienia o nowych materiałach i wydarzeniach.</li>
-            <li>Pływające alerty, np. „Nowe spotkanie z mentorem”.</li>
-            <li>Przejrzysty kalendarz tygodniowy i miesięczny.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="screens" class="section section-alt">
-    <div class="section-content">
-      <h2>Ekrany aplikacji</h2>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Ekran powitalny</h3>
-          <p>Logo, krótki opis, prosty formularz rejestracji: imię, kierunek, zainteresowania, przycisk „Rozpocznij”.</p>
-        </div>
-        <div class="card">
-          <h3>Zapoznania</h3>
-          <p>Wydarzenia polecane dla Ciebie, małe grupy powitalne i tablica „Poznajmy się” z profilami i przyciskiem „Napisz wiadomość”.</p>
-        </div>
-        <div class="card">
-          <h3>Mentoring</h3>
-          <p>Lista mentorów i mentee z filtrami, karty relacji z przyciskiem „Umów spotkanie” oraz kalendarz spotkań.</p>
-        </div>
-        <div class="card">
-          <h3>Wydarzenia / Kalendarz</h3>
-          <p>Widok miesięczny/tygodniowy, typy wydarzeń (ciche, warsztaty, gry, spacery, wolontariat) i filtrowanie.</p>
-        </div>
-        <div class="card">
-          <h3>Wiadomości / Czat</h3>
-          <p>Czaty 1:1 i grupowe, status online/offline, wysyłanie załączników, notatek, linków, przycisk „Losuj pytanie”.</p>
-        </div>
-        <div class="card">
-          <h3>Profil użytkownika</h3>
-          <p>Zdjęcie, krótkie bio, tagi zainteresowań oraz ustawienia konta i powiadomień.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="why" class="section">
-    <div class="section-content">
-      <h2>Dlaczego Buddy / Welcome?</h2>
-      <div class="grid-2">
+  <!-- MENTORING -->
+  <div id="mentoring" class="screen">
+    <div class="screen-content">
+      <h2>Twój mentor</h2>
+      <div class="mentor-card">
+        <div class="avatar large">J</div>
         <div>
-          <ul class="checklist">
-            <li>Personalizacja pod temperament, w tym introwertyków.</li>
-            <li>Mikro-grupy zamiast dużych, przytłaczających integracji.</li>
-            <li>Połączenie integracji, mentoringu i wsparcia akademickiego.</li>
-            <li>Spokojne, „ciche” wydarzenia, spacery i spotkania online.</li>
-            <li>Moduł podsumowań zajęć dla osób nieobecnych.</li>
-          </ul>
+          <h3>Julia Kowalska</h3>
+          <p>Informatyka, 3. rok • Mentor od 2 lat</p>
+          <p class="tags">🎮 Gry • 💻 Programowanie • 🎵 Muzyka</p>
+          <button class="btn-primary">Umów spotkanie</button>
+          <button class="btn-secondary" onclick="openChat('Julia Kowalska')">Wyślij wiadomość</button>
         </div>
-        <div>
-          <p>
-            Aplikacja jest inkluzywna i empatyczna – wspiera różne typy osobowości,
-            pomaga budować trwałe relacje i ułatwia ogarnianie codzienności na uczelni.
-          </p>
+      </div>
+
+      <h3>Najbliższe spotkania</h3>
+      <div class="meetings">
+        <div class="meeting-card">
+          <div class="meeting-date">
+            <div class="day">15</div>
+            <div class="month">Gru</div>
+          </div>
+          <div>
+            <h4>Spotkanie z Julią</h4>
+            <p>Piątek, 16:00 • Online (MS Teams)</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Icebreaker generator</h3>
+      <div class="icebreaker-box">
+        <p id="icebreaker-text">"Co lubisz robić w wolnym czasie?"</p>
+        <button class="btn-secondary" onclick="randomIcebreaker()">Losuj nowe pytanie</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WYDARZENIA -->
+  <div id="wydarzenia" class="screen">
+    <div class="screen-content">
+      <h2>Kalendarz wydarzeń</h2>
+      <div class="filters">
+        <button class="filter active">Wszystkie</button>
+        <button class="filter">Ciche</button>
+        <button class="filter">Warsztaty</button>
+        <button class="filter">Spacery</button>
+        <button class="filter">Online</button>
+      </div>
+
+      <div class="calendar-events">
+        <div class="calendar-day">
+          <h4>Poniedziałek, 9 grudnia</h4>
+          <div class="event-item">
+            <span class="event-tag online">Online</span>
+            <div>
+              <h5>Spotkanie grupy "Informatycy 1. rok"</h5>
+              <p>19:00 • MS Teams</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="calendar-day">
+          <h4>Środa, 11 grudnia</h4>
+          <div class="event-item">
+            <span class="event-tag warsztat">Warsztat</span>
+            <div>
+              <h5>Warsztat rysunku dla początkujących</h5>
+              <p>18:00 • Sala 203</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="calendar-day">
+          <h4>Sobota, 14 grudnia</h4>
+          <div class="event-item">
+            <span class="event-tag ciche">Ciche</span>
+            <div>
+              <h5>Kawiarnia i gry planszowe</h5>
+              <p>14:00 • Kafejka "Cicho Sza"</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="cta" class="section section-alt">
-    <div class="section-content cta-box">
-      <h2>Chcesz przetestować Buddy / Welcome na swojej uczelni?</h2>
-      <p>Zostaw e‑mail, a odezwiemy się, gdy ruszą testy pilotażowe.</p>
-      <form class="cta-form">
-        <input type="email" placeholder="Twój e‑mail uczelniany" required>
-        <button type="submit" class="btn-primary">Dołącz do pilotażu</button>
-      </form>
-      <small>To tylko wersja demonstracyjna strony – funkcje aplikacji mogą się zmienić.</small>
+  <!-- CZAT -->
+<div id="czat" class="screen">
+  <div class="screen-content">
+    <h2>Wiadomości</h2>
+    <div class="chat-list">
+      <div class="chat-item" onclick="openChatWindow('Julia Kowalska')">
+        <div class="avatar">J</div>
+        <div>
+          <h4>Julia Kowalska <span class="online-badge"></span></h4>
+          <p class="last-msg">Jasne, pytaj! O który projekt chodzi?</p>
+        </div>
+      </div>
+      <div class="chat-item" onclick="openChatWindow('Grupa: Informatycy 1. rok')">
+        <div class="avatar">👥</div>
+        <div>
+          <h4>Grupa: Informatycy 1. rok</h4>
+          <p class="last-msg">Ania: Dziękuję bardzo! ❤️</p>
+        </div>
+      </div>
+      <div class="chat-item" onclick="openChatWindow('Marek')">
+        <div class="avatar">M</div>
+        <div>
+          <h4>Marek</h4>
+          <p class="last-msg">Świetnie! To będzie fajnie, pokażę Ci zasady</p>
+        </div>
+      </div>
     </div>
-  </section>
-</main>
 
-<footer class="footer">
-  <p>Buddy / Welcome · projekt aplikacji studenckiej · 2025</p>
-</footer>
+    <div id="chat-window" class="chat-window" style="display:none;">
+      <div class="chat-header">
+        <button class="back-btn" onclick="closeChatWindow()">← Powrót</button>
+        <h3 id="chat-title">Julia Kowalska</h3>
+      </div>
+      <div class="chat-messages">
+        <!-- Wiadomości będą załadowane dynamicznie przez JavaScript -->
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Napisz wiadomość...">
+        <button class="btn-send">Wyślij</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- PROFIL -->
+  <div id="profil" class="screen">
+    <div class="screen-content">
+      <h2>Twój profil</h2>
+      <div class="profile-view">
+        <div class="avatar huge">A</div>
+        <h3>Ania</h3>
+        <p class="bio">Informatyka, 1. rok • Nowa w mieście</p>
+        <p class="tags">🎮 Gry • 📚 Czytanie • ☕ Kawa • 🎨 Rysowanie</p>
+
+        <div class="profile-section">
+          <h4>O mnie</h4>
+          <p>Cześć! Jestem na pierwszym roku informatyki. Uwielbiam gry RPG, czytanie fantasy i spokojne wieczory przy kawie. Szukam osób o podobnych zainteresowaniach do luźnych spotkań 😊</p>
+        </div>
+
+        <div class="profile-section">
+          <h4>Poziom śmiałości</h4>
+          <p>🔹🔹🔹⚪⚪ • Wolę małe grupy i spokojne wydarzenia</p>
+        </div>
+
+        <button class="btn-secondary">Edytuj profil</button>
+        <button class="btn-secondary">Ustawienia</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
+
